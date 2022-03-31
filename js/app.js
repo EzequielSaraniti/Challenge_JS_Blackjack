@@ -137,6 +137,10 @@ function repartoInicialUser(){
     
         if (seguirJugando == "y"){
             apuesta()
+        }else if (seguirJugando == "n") {
+            return
+        }else {
+            apuesta()
         }
     }
 
@@ -150,10 +154,10 @@ let pedirOtra = prompt("¿ Quieres pedir otra carta ? (Y/n)")
 
 if (pedirOtra == "y"){
     repartoInicialUser()
-}
-
-if (pedirOtra == "n"){
+} else if (pedirOtra == "n") {
     repartoCrupier()
+} else{
+    repartoInicialUser()
 }
 
 }
@@ -255,6 +259,10 @@ function repartoCrupier(){
     seguirJugando = seguirJugando.toLocaleLowerCase()
 
 if (seguirJugando == "y"){
+    apuesta()
+} else if (seguirJugando == "n"){
+    return
+} else {
     apuesta()
 }
 }
